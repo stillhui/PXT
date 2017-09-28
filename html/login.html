@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>票信通-个人中心</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/jcDate.css">
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<link rel="shortcut icon" href="../img/favicon.ico" />
+
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/swiper.min.js"></script>
+		<script type="text/javascript" src="../js/index.js"></script>
+
+	</head>
+	<body>
+		<div class="container-fluid user register log">
+			<div class="loginWraper">
+				<div class="login">
+					<ul>
+						<li><a href="./login.html">登录</a></li>
+						<li style="padding: 0;color: #999ea4;">|</li>
+						<li><a href="./register.html">注册</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header">
+				<div class="headerImg">
+					<img class="i1" src="../img/PXTLOGO.png">
+					<img class="i2" src="../img/PXTLOGO_.png">
+					<img class="i3" src="../img/headerText.png">
+				</div>
+			</div>
+			<div class="navWraper">
+				<div class="nav">
+					<ul>
+						<li><a href="./index.html">首页</a></li>
+						<li><a href="./deal.html">票据交易</a></li>
+						<li><a href="./information.html">行业资讯</a></li>
+						<li><a href="./user.html">个人中心</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="right">
+					<ul class="tit">
+						<li class="l">用户登录</li>
+						<li class="r">没有帐号，<a href="./register.html"><span style="color: #2289ff;" class="st">马上注册</span></a></li>
+					</ul>
+					<form class="con">
+						<p class="p1">手机号:&nbsp;<input type="text" name="" placeholder="请填写您的手机号码"></p>
+						<p class="p3">密码:&nbsp;<input type="text" name="" placeholder="请填写您的登录密码"></p>
+						<p class="p2">验证码:&nbsp;<input type="text" class="i1" placeholder="请输入右图验证码" name="" ><span class="s1">aaaa<!-- <img style="height: 100%;" src="../img/PXTLOGO.png"> --></span>
+						</p>
+						<p class="p4">
+							<label class="active"><input type="checkbox" name=""  checked /><span class="seen">√</span><span class="s2">自动登陆</span></label>
+							<span class="fgt"><a style="color: #888;" href="./forget.html">忘记密码?</a></span>
+						</p>
+						<input type="submit" class="sb" name="" value="立即登录">
+					</form>	
+					<script type="text/javascript">
+						var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+						function generateMixed(n) {
+						     var arr = [];
+						     for(var i = 0; i < n ; i ++) {
+						         var id = Math.ceil(Math.random()*61);
+						         arr[i] = chars[id];
+						     }
+						     return arr;
+						}  
+						function zf(){
+							return Math.floor(Math.random()*10)>4?"":"-";
+						}
+						var num4 = generateMixed(4);
+						$(".register.log .right form.con span.s1").html(num4.map(function(e,index){return '<span style="transform:rotate('+zf()+Math.random()*45+'deg)">'+e+'</span>'}));
+						$(".register.log .right form.con span.s1").on("click",function(){
+							$(".register .right form.con p input.i1").val("");
+							$(".register.log .right form.con p.p2").find(".if").remove();
+							num4 = generateMixed(4);
+							$(this).html(num4.map(function(e,index){return '<span style="transform:rotate('+zf()+Math.random()*45+'deg)">'+e+'</span>'}));
+						})
+						$(".register .right form.con p input.i1").on("keyup",function(){
+							$(".register.log .right form.con p.p2").find(".if").remove();
+							if($(this).val().toLowerCase() == num4.join().replace(/,/g,"").toLowerCase()){
+								$(".register.log .right form.con p.p2").append('<span class="if" style="color:green;font-size:12px;">√ 验证通过</span>')
+							}else{
+								$(".register.log .right form.con p.p2").append('<span class="if" style="color:#e8585b;font-size:12px;">× 验证码不正确，请重新输入</span>')
+							}
+						})
+					</script>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(".register .right form.con p.p4 label input").on("click",function(){
+			return false;
+		})
+		$(".register .right form.con p.p4").find("label").on("click",function(){console.log($(this).hasClass("active"))
+			if($(this).hasClass("active")){
+				$(this).removeClass("active");
+			}else{
+				$(this).addClass("active");
+			}
+			
+		})
+	</script>
+</html>

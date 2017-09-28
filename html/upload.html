@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>票信通-个人中心</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/jcDate.css">
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<link rel="shortcut icon" href="../img/favicon.ico" />
+
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/swiper.min.js"></script>
+		<script type="text/javascript" src="../js/index.js"></script>
+
+	</head>
+	<body>
+		<div class="container-fluid user register upload">
+			<div class="loginWraper">
+				<div class="login">
+					<ul>
+						<li><a href="./login.html">登录</a></li>
+						<li style="padding: 0;color: #999ea4;">|</li>
+						<li><a href="./register.html">注册</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header">
+				<div class="headerImg">
+					<img class="i1" src="../img/PXTLOGO.png">
+					<img class="i2" src="../img/PXTLOGO_.png">
+					<img class="i3" src="../img/headerText.png">
+				</div>
+			</div>
+			<div class="navWraper">
+				<div class="nav">
+					<ul>
+						<li><a href="./index.html">首页</a></li>
+						<li><a href="./deal.html">票据交易</a></li>
+						<li><a href="./information.html">行业资讯</a></li>
+						<li><a href="./user.html">个人中心</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="right">
+					<ul class="tit">
+						<li class="l">上传票据</li>
+						<li style="display: none;" class="r">我已注册，<span class="st">马上登陆</span></li>
+					</ul>
+					<form class="con">
+						<p class="p1 p00">请选择票据类型:&nbsp;
+							<select class="s1">
+							  <option value ="银票">银票</option>
+							  <option value ="商票">商票</option>
+							</select>
+						</p>
+						<p class="p1 p01 up">上传票据照片:&nbsp;<label><input type="file" value="选择图片" />选择图片</label></p>
+						<p class="p1 p02 switch">是否可转让:&nbsp;<span class="s11">是</span><span>否</span></p>
+						<p class="p1 p03">背书情况:&nbsp;<input type="text" name="" ></p>
+						<p class="p1 p04">票面金额:&nbsp;<input type="text" name="" ></p>
+						<p class="p1 p05">承诺人:&nbsp;<input type="text" name="" ></p>
+						<p class="p1 p06">出票日期:&nbsp;<input type="text" name="" ></p>
+						<p class="p1 p07">到期日期:&nbsp;<input type="text" name="" ></p>
+						<p class="p1 p08">期望利率(%):&nbsp;<input type="text" name="" ></p>
+						<p class="p1 p09">电话号码:&nbsp;<input type="text" name="" ></p>
+						<p class="p1 p10">备注:&nbsp;<input type="text" name="" ></p>
+						<input type="submit" class="sb p11" name="" value="确认上传">
+					</form>	
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(".register.upload .right form.con .p1.switch span").on("click",function(){
+			$(this).addClass("s11").siblings().removeClass("s11");
+		})
+	</script>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>票信通-票据交易</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/jcDate.css">
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<link rel="shortcut icon" href="../img/favicon.ico" />
+
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/swiper.min.js"></script>
+		<script type="text/javascript" src="../js/index.js"></script>
+
+	</head>
+	<body>
+		<div class="container-fluid deal noteDetail noteDetailNaN noteDetailNaNFixed">
+			<div class="loginWraper">
+				<div class="login">
+					<ul>
+						<li><a href="./login.html">登录</a></li>
+						<li style="padding: 0;color: #999ea4;">|</li>
+						<li><a href="./register.html">注册</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header">
+				<div class="headerImg">
+					<img class="i1" src="../img/PXTLOGO.png">
+					<img class="i2" src="../img/PXTLOGO_.png">
+					<img class="i3" src="../img/headerText.png">
+				</div>
+			</div>
+			<div class="navWraper">
+				<div class="nav">
+					<ul>
+						<li><a href="./index.html">首页</a></li>
+						<li class="hover"><a href="./deal.html">票据交易</a></li>
+						<li><a href="./information.html">行业资讯</a></li>
+						<li><a href="./user.html">个人中心</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="nava">
+				<ul>
+					<li><a href="./index.html">首页</a></li>
+					<li>></li>
+					<li><a href="./deal.html">票据交易</a></li>
+					<li>></li>
+					<li><a href="./noteDetailNaNFixed.html">汇票详情</a></li>
+				</ul>
+			</div>
+			<div class="noteCon">
+				<div class="l">
+					<ul class="u1">
+						<li class="l1"><span>银票</span></li>
+						<li class="l2">中国农业银行郑州支行</li>
+					</ul>
+					<ul class="u2">
+						<li>
+							<p class="p1">出票行</p>
+							<p class="p2">中国农业银行郑州支行</p>
+						</li>
+						<li>
+							<p class="p1">票据金额</p>
+							<p class="p2">100.00万</p>
+						</li>
+						<li>
+							<p class="p1">汇票到期日</p>
+							<p class="p2">2018-08-30</p>
+						</li>
+					</ul>
+					<ul class="u3">
+						<li>
+							<p>票据类型:&nbsp;&nbsp;银票</p>
+							<p>剩余天数:&nbsp;&nbsp;21天</p>
+						</li>
+						<li>
+							<p>背书情况:&nbsp;&nbsp;回头背书</p>
+							<p>出票日期:&nbsp;&nbsp;2018-08-11</p>
+						</li>
+						<li>
+							<p>期望利率:&nbsp;&nbsp;4.22222%</p>
+							<p>联系人电话:&nbsp;&nbsp;1230497999</p>
+						</li>
+					</ul>
+				</div>
+				<div class="r">
+					<p class="p1">进行中</p>
+					<p class="p2">已有<span>2</span>家机构报价</p>
+					<div class="wrp">
+						<!-- <p class="p3">请登录后进行报价!</p> -->
+						<!-- <p class="p4">立即登录</p> -->
+						<p class="p5">报价金额:<input type="text">元</p>
+						<p class="p6">年利率:<input type="text">%</p>
+						<p class="p7">立即报价</p>
+						<p class="p8"><a id="alert" href="javascript:void(0);"><img src="../img/NaN.png" /><span>报价计算</span></a></p>
+					</div>
+				</div>
+			</div>
+			<div class="noteTit">
+				<div class="d1"><p>汇票图片</p></div>
+				<div class="d2">
+					<img src="../img/detail02.png">
+				</div>
+			</div>
+		</div>
+		<div class="fixed"></div>
+		<div class="count">
+			<div class="tit">
+				<span>汇票报价</span>
+				<img id="close" src="../img/close.png">
+			</div>
+			<div class="con">
+				<form>
+					<label>票面金额(万元):<input id="i10" type="text" placeholder="待输入..." /></label>
+					<label>月利率(‰):<input id="i11" type="text" placeholder="待输入..." /></label>
+					<label>年利率(%):<input id="i12" type="text" placeholder="待输入..." /></label>
+					<label>贴现日期:<input id="i13" class="jcDate1 start1" type="text" placeholder="待输入..." /></label>
+					<label>到期日期:<input id="i14" class="jcDate1 end1" type="text" placeholder="待输入..." /></label>
+					<label>调整天数(天):<input id="i15" type="text" placeholder="待输入..." /></label>
+					<label>每10万手续费(元):<input id="i16" type="text" placeholder="待输入..." /></label>
+					<label>计息天数(天):<input id="i17" type="text" placeholder="待计算..." disabled="disabled" /></label>
+					<label>每10万贴息(元):<input id="i18" type="text" placeholder="待计算..." disabled="disabled" /></label>
+					<label>贴现利息(元):<input id="i19" type="text" placeholder="待计算..." disabled="disabled" /></label>
+					<label>支付金额(元):<input id="i1a" type="text" placeholder="待计算..." disabled="disabled" /></label>
+					<p><span class="s1">清空</span><span class="s2">计算</span></p>
+				</form>
+				<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+				<script type="text/javascript" src="../js/jQuery-jcDate.js"></script>
+				<script>
+				$(function (){
+
+					$("#alert").on("click",function(){
+						$(".fixed").show();
+						$(".count").show();
+						// $("html,body").css({"height":"100%","overflow":"hidden"});
+					})
+					$("#close").on("click",function(){
+						$(".fixed").hide();
+						$(".count").hide();
+						clearData();
+						// $("html,body").css({"height":"100%","overflow":"visible"});
+					})
+
+					var startDate = new Date();
+					startDate = formatTimeS(startDate);
+					$(".start1").val(startDate);
+					var endDate = new Date();
+					endDate = formatTimeE(endDate);
+					$(".end1").val(endDate);
+					function formatTimeS(date) {
+					  var year = date.getFullYear()
+					  var month = date.getMonth() + 1
+					  var day = date.getDate()
+
+					  var hour = date.getHours()
+					  var minute = date.getMinutes()
+					  var second = date.getSeconds()
+
+					  // return [year, month, day].map(formatNumber).join('-')
+					  return [year, month, day].join('-')
+					}
+					function formatTimeE(date) {
+					  var year = date.getFullYear()+1
+					  var month = date.getMonth() + 1
+					  var day = date.getDate()
+
+					  var hour = date.getHours()
+					  var minute = date.getMinutes()
+					  var second = date.getSeconds()
+
+					  // return [year, month, day].map(formatNumber).join('-')
+					  return [year, month, day].join('-')
+					}
+					function formatNumber(n) {
+					  n = n.toString()
+					  return n[1] ? n : '0' + n
+
+					}
+					var getData = function(){
+						var that = new Object();
+						that.data={
+							price: $("#i10").val(),
+							rate: $("#i11").val(),
+							yearRate: $("#i12").val(),
+							date: $("#i13").val(),
+							endDate: $("#i14").val(),
+							adjustment: $("#i15").val(),
+							fee: $("#i16").val(),
+							diffDays: $("#i17").val(),
+							discount: $("#i18").val(),
+							totaldiscount: $("#i19").val(),
+							discountprice: $("#i1a").val(),
+						}
+						return that;
+					}
+					
+					var calculation = function(){
+						  var that = getData();
+					      var srart = that.data.date.replace(/\-/g, "/")
+					      var end = that.data.endDate.replace(/\-/g, "/");
+					      var sTime = new Date(srart);      //开始时间
+					      var eTime = new Date(end);  //结束时间
+					      var diffDays = parseInt((eTime.getTime() - sTime.getTime()) / parseInt(1000 * 3600 * 24));
+					      var ticketprice = parseFloat(that.data.price*10000);
+					      var rate = that.data.yearRate/100;
+					      var adjustment = that.data.adjustment  == '' ? '0' : that.data.adjustment;
+					      var days = parseFloat(diffDays) + parseFloat(adjustment);
+					      var fee = that.data.fee == '' ? '0' : that.data.fee;
+					      var discount = parseFloat(100000 * rate / 360 * days + parseFloat(fee));
+					      var totaldiscount =(ticketprice / 100000 * discount).toFixed(2);
+					        that.data.diffDays = days;
+					        that.data.discount = discount.toFixed(3);
+					        that.data.totaldiscount = totaldiscount;
+					        that.data.discountprice = parseFloat(ticketprice - totaldiscount).toFixed(2);
+					        
+					        $("#i17").val(that.data.diffDays);
+					        $("#i18").val(that.data.discount);
+					        $("#i19").val(that.data.totaldiscount);
+					        $("#i1a").val(that.data.discountprice);
+					        console.log(that);
+					        if(diffDays<0){
+					        	$("#i13").parent().append('<div id="add" style="position:absolute;right:18px;top:100%;width:212px;height:16px;line-height:16px;font-size:12px;color:red;text-align:left;">贴现日期应小于到期日期</div>');
+						        	// clearData();
+						        }
+					}
+					for(let i=0;i<7;i++){
+						$("#i1"+i).on("keyup",function(){
+							if(i==3||i==4){return false;}
+							if(isNaN($(this).val())){$(this).css("color","red").parent().append('<div id="add" style="position:absolute;right:18px;top:100%;width:212px;height:16px;line-height:16px;font-size:12px;color:red;text-align:left;">请输入数字格式</div>');}
+							else{$(this).css("color","inherit").parent().find("#add").remove();}
+						})
+					}
+					$("#i11").on("keyup",function(){
+						$("#i12").val($(this).val()*12/10);
+						if($(this).val()==""){$("#i12").val("");}
+					})
+					$("#i12").on("keyup",function(){
+						$("#i11").val($(this).val()*10/12);
+						if($(this).val()==""){$("#i11").val("");}
+					})
+					var clearData = function(){
+					    $("#i10").val("").parent().find("#add").remove();
+					    $("#i11").val("").parent().find("#add").remove();
+					    $("#i12").val("").parent().find("#add").remove();
+					    $("#i13").val(startDate).parent().find("#add").remove();
+					    $("#i14").val(endDate).parent().find("#add").remove();
+					    $("#i15").val("").parent().find("#add").remove();
+					    $("#i16").val("").parent().find("#add").remove();
+					    $("#i17").val("").parent().find("#add").remove();
+					    $("#i18").val("").parent().find("#add").remove();
+					    $("#i19").val("").parent().find("#add").remove();
+					    $("#i1a").val("").parent().find("#add").remove();
+					}
+					$(".count .con form p span.s1").on("click",function(){
+						clearData();
+					})
+					$(".count .con form p span.s2").on("click",function(){
+						calculation();
+					})
+					$(".jcDate1").jcDate({					       
+							IcoClass : "jcDateIco",
+							Event : "click",
+							Speed : 100,
+							Left : 0,
+							Top : 28,
+							format : "-",
+							Timeout : 100
+					});
+				});
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
